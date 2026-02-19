@@ -4,17 +4,31 @@ import { Navlink } from "@/types/navlink";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
 import { Badge } from "./Badge";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
-import { isMobile } from "@/lib/utils";
 
 export const Sidebar = () => {
-  const [open, setOpen] = useState(isMobile() ? false : true);
+  const [open, setOpen] = useState(true);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobileDevice(window.innerWidth < 1024);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    setOpen(isMobileDevice ? false : true);
+  }, [isMobileDevice]);
 
   return (
     <>
@@ -29,9 +43,9 @@ export const Sidebar = () => {
           >
             <div className="flex-1 overflow-auto">
               <SidebarHeader />
-              <Navigation setOpen={setOpen} />
+              <Navigation setOpen={setOpen} isMobile={isMobileDevice} />
             </div>
-            <div onClick={() => isMobile() && setOpen(false)}>
+            <div onClick={() => isMobileDevice && setOpen(false)}>
               <Badge href="/resume" text="Read Resume" />
             </div>
           </motion.div>
@@ -41,7 +55,7 @@ export const Sidebar = () => {
         className="fixed lg:hidden bottom-4 right-4 h-8 w-8 border border-neutral-200 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
         onClick={() => setOpen(!open)}
       >
-        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-secondary" />
+        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-muted-foreground" />
       </button>
     </>
   );
@@ -49,8 +63,10 @@ export const Sidebar = () => {
 
 export const Navigation = ({
   setOpen,
+  isMobile,
 }: {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  isMobile: boolean;
 }) => {
   const pathname = usePathname();
 
@@ -62,16 +78,16 @@ export const Navigation = ({
         <Link
           key={link.href}
           href={link.href}
-          onClick={() => isMobile() && setOpen(false)}
+          onClick={() => isMobile && setOpen(false)}
           className={twMerge(
-            "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
-            isActive(link.href) && "bg-white shadow-lg text-primary"
+            "text-muted-foreground hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
+            isActive(link.href) && "bg-white shadow-lg text-primary",
           )}
         >
           <link.icon
             className={twMerge(
               "h-4 w-4 flex-shrink-0",
-              isActive(link.href) && "text-sky-500"
+              isActive(link.href) && "text-sky-500",
             )}
           />
           <span>{link.label}</span>
@@ -86,13 +102,13 @@ export const Navigation = ({
           key={link.href}
           href={link.href}
           className={twMerge(
-            "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm"
+            "text-muted-foreground hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
           )}
         >
           <link.icon
             className={twMerge(
               "h-4 w-4 flex-shrink-0",
-              isActive(link.href) && "text-sky-500"
+              isActive(link.href) && "text-sky-500",
             )}
           />
           <span>{link.label}</span>
@@ -106,15 +122,15 @@ const SidebarHeader = () => {
   return (
     <div className="flex space-x-2">
       <Image
-        src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80"
+        src="/images/ed.jpg"
         alt="Avatar"
         height="40"
         width="40"
         className="object-cover object-top rounded-full flex-shrink-0"
       />
       <div className="flex text-sm flex-col">
-        <p className="font-bold text-primary">John Doe</p>
-        <p className="font-light text-secondary">Developer</p>
+        <p className="font-bold text-primary">Ed Read</p>
+        <p className="font-light text-muted-foreground">Junior Developer</p>
       </div>
     </div>
   );
