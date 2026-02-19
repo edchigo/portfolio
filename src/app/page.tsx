@@ -1,40 +1,31 @@
+import React from "react";
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
 import { Products } from "@/components/Products";
 import { TechStack } from "@/components/TechStack";
-import Image from "next/image";
 import { CardStack } from "@/components/ui/card-stack";
 import { cn } from "@/lib/utils";
 
-export function CardStackDemo() {
-  return (
-    <div className="h-[40rem] flex items-center justify-center w-full">
-      <CardStack items={CARDS} />
-    </div>
-  );
-}
-
-// Small utility to highlight the content of specific section of a testimonial content
-export const Highlighter = ({
+function Highlighter({
   children,
   className,
 }: {
   children: React.ReactNode;
   className?: string;
-}) => {
+}) {
   return (
     <span
       className={cn(
         "font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
-        className,
+        className
       )}
     >
       {children}
     </span>
   );
-};
+}
 
 const CARDS = [
   {
@@ -67,38 +58,50 @@ const CARDS = [
     designation: "Manager Project Mayhem",
     content: (
       <p>
-        The first rule of
-        <Highlighter>Fight Club</Highlighter> is that you do not talk about
-        fight club. The second rule of
-        <Highlighter>Fight club</Highlighter> is that you DO NOT TALK about
-        fight club.
+        The first rule of <Highlighter>Fight Club</Highlighter> is that you do
+        not talk about fight club. The second rule of{" "}
+        <Highlighter>Fight club</Highlighter> is that you DO NOT TALK about fight
+        club.
       </p>
     ),
   },
 ];
 
-export default function Home() {
+function CardStackDemo() {
+  return (
+    <div className="h-[40rem] flex items-center justify-center w-full">
+      <CardStack items={CARDS} />
+    </div>
+  );
+}
+
+export default function Page() {
   return (
     <Container>
       <span className="text-4xl">👋</span>
       <Heading className="font-black">Hello there! I&apos;m Ed</Heading>
+
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m a Junior Developer that loves{" "}
-        <Highlight>turning ideas</Highlight> into polished web apps that are
-        simple, useful, and enjoyable to use. I enjoy building clean interfaces,
-        writing maintainable code, and improving things through iteration and
-        feedback.
+        I&apos;m a Junior Developer that loves <Highlight>turning ideas</Highlight>{" "}
+        into polished web apps that are simple, useful, and enjoyable to use. I
+        enjoy building clean interfaces, writing maintainable code, and improving
+        things through iteration and feedback.
       </Paragraph>
+
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m always <Highlight>learning</Highlight>, and I’m excited to join
-        a team where I can contribute, grow, and ship meaningful work.
+        I&apos;m always <Highlight>learning</Highlight>, and I’m excited to join a
+        team where I can contribute, grow, and ship meaningful work.
       </Paragraph>
-      <Heading
-        as="h2"
-        className="font-black text-lg md:text-lg lg:text-lg mt-20 mb-4"
-      >
+
+      {/* Optional: show your card stack demo. Remove this block if you don't want it on the homepage. */}
+      {/* <div className="mt-16">
+        <CardStackDemo />
+      </div> */}
+
+      <Heading as="h2" className="font-black text-lg md:text-lg lg:text-lg mt-20 mb-4">
         What I&apos;ve been working on
       </Heading>
+
       <Products />
       <TechStack />
     </Container>
