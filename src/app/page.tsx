@@ -93,12 +93,12 @@ export default function Page() {
         team where I can contribute, grow, and ship meaningful work.
       </Paragraph>
 
-      {/* Optional: show your card stack demo. Remove this block if you don't want it on the homepage. */}
+      {/* Uncomment if you want the card stack on the homepage */}
       {/* <div className="mt-16">
         <CardStackDemo />
       </div> */}
 
-      <Heading as="h2" className="font-black text-lg md:text-lg lg:text-lg mt-20 mb-4">
+      <Heading as="h2" className="font-black text-lg mt-20 mb-4">
         What I&apos;ve been working on
       </Heading>
 
