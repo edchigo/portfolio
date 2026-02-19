@@ -6,10 +6,10 @@ import sidefolioMoonbeam from "public/images/sidefolio-moonbeam.png";
 import sidefolioMoonbeam2 from "public/images/sidefolio-moonbeam-2.png";
 import sidefolioTailwindMasterKit from "public/images/sidefolio-tailwindmasterkit.png";
 import sidefolioTailwindMasterKit2 from "public/images/sidefolio-tailwindmasterkit-2.png";
-import japlansImg from "/images/japlans.jpg";
-import japlansImg2 from "/images/japlansTwo.jpg";
-import rainfallImg from "/images/rainfall.jpg";
-import rainfallImg2 from "/images/rainfallTwo.jpg";
+const japlansImg = "/images/japlans.jpg";
+const japlansImg2 = "/images/japlansTwo.jpg";
+const rainfallImg = "/images/rainfall.jpg";
+const rainfallImg2 = "/images/rainfallTwo.jpg";
 
 export const products = [
   {
