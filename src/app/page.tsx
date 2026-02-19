@@ -15,7 +15,7 @@ export function CardStackDemo() {
     </div>
   );
 }
- 
+
 // Small utility to highlight the content of specific section of a testimonial content
 export const Highlighter = ({
   children,
@@ -28,14 +28,14 @@ export const Highlighter = ({
     <span
       className={cn(
         "font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-700/[0.2] dark:text-emerald-500 px-1 py-0.5",
-        className
+        className,
       )}
     >
       {children}
     </span>
   );
 };
- 
+
 const CARDS = [
   {
     id: 0,
@@ -43,8 +43,8 @@ const CARDS = [
     designation: "Senior Software Engineer",
     content: (
       <p>
-        These cards are amazing, <Highlighter>I want to use them</Highlighter> in my
-        project. Framer motion is a godsend ngl tbh fam 🙏
+        These cards are amazing, <Highlighter>I want to use them</Highlighter>{" "}
+        in my project. Framer motion is a godsend ngl tbh fam 🙏
       </p>
     ),
   },
@@ -55,9 +55,9 @@ const CARDS = [
     content: (
       <p>
         I dont like this Twitter thing,{" "}
-        <Highlighter>deleting it right away</Highlighter> because yolo. Instead, I
-        would like to call it <Highlighter>X.com</Highlighter> so that it can easily
-        be confused with adult sites.
+        <Highlighter>deleting it right away</Highlighter> because yolo. Instead,
+        I would like to call it <Highlighter>X.com</Highlighter> so that it can
+        easily be confused with adult sites.
       </p>
     ),
   },
@@ -68,10 +68,10 @@ const CARDS = [
     content: (
       <p>
         The first rule of
-        <Highlighter>Fight Club</Highlighter> is that you do not talk about fight
-        club. The second rule of
-        <Highlighter>Fight club</Highlighter> is that you DO NOT TALK about fight
-        club.
+        <Highlighter>Fight Club</Highlighter> is that you do not talk about
+        fight club. The second rule of
+        <Highlighter>Fight club</Highlighter> is that you DO NOT TALK about
+        fight club.
       </p>
     ),
   },
@@ -84,13 +84,14 @@ export default function Home() {
       <Heading className="font-black">Hello there! I&apos;m Ed</Heading>
       <Paragraph className="max-w-xl mt-4">
         I&apos;m a Junior Developer that loves{" "}
-        <Highlight>building products</Highlight> and web apps that can impact
-        millions of lives
+        <Highlight>turning ideas</Highlight> into polished web apps that are
+        simple, useful, and enjoyable to use. I enjoy building clean interfaces,
+        writing maintainable code, and improving things through iteration and
+        feedback.
       </Paragraph>
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m a Junior software engineer with{" "}
-        <Highlight>7 years of experience</Highlight> building scalable web apps
-        that are performance optimized and good looking.
+        I&apos;m always <Highlight>learning</Highlight>, and I’m excited to join
+        a team where I can contribute, grow, and ship meaningful work.
       </Paragraph>
       <Heading
         as="h2"

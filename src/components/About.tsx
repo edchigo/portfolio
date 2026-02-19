@@ -71,47 +71,48 @@ export default function About() {
 
       <div className="max-w-4xl">
         <Paragraph className=" mt-4">
-          Hey there, I&apos;m Ed Read - a passionate developer, avid writer, and
-          a connoisseur of awesome design. Welcome to my corner of the digital
-          world!
+          Hey, I&apos;m Ed. I&apos;m a Junior Developer who loves building
+          clean, practical things that feel good to use. I&apos;m big on solid
+          fundamentals, thoughtful UI, and the kind of small details that make a
+          project feel finished rather than “almost there”
         </Paragraph>
         <Paragraph className=" mt-4">
-          Since the early days of my journey, I&apos;ve been captivated by the
-          art of crafting exceptional digital experiences. As a developer, I
-          thrive on turning lines of code into functional and elegant solutions.
-          My goal is to not just create software, but to build digital marvels
-          that seamlessly merge form and function.
+          Most of my time goes into hands-on projects where I can learn by
+          doing. I build web apps with React and modern tooling, and I&apos;m
+          constantly improving how I structure components, handle form
+          validation, keep styles consistent, and make pages responsive and
+          accessible.
         </Paragraph>
 
         <Paragraph className=" mt-4">
-          But my journey doesn&apos;t stop at coding. With a heart full of words
-          and a mind brimming with ideas, I&apos;ve ventured into the realm of
-          writing. From tech articles that unravel complex concepts to creative
-          tales that ignite the imagination, I weave words to inform, entertain,
-          and inspire.
+          I&apos;m also building a 2D Unity side scroller game with a gloomy,
+          rain soaked vibe, complete with custom pixel art, animation work, and
+          a lot of problem solving around movement, sprite handling, and
+          gameplay systems. It&apos;s been a great way to mix creative direction
+          with real debugging and iteration.
         </Paragraph>
         <Paragraph className=" mt-4">
-          What sets me apart is my unwavering appreciation for design. I believe
-          that aesthetics and usability go hand in hand. My eye for awesome
-          design ensures that every project I undertake not only works
-          flawlessly under the hood but also looks stunning on the surface.
+          Alongside that, I&apos;m developing my Python skills and working on
+          smaller projects that help me practice logic, data handling, and clean
+          code. I enjoy projects that have a clear goal, a simple interface, and
+          room to scale up once the core works.
         </Paragraph>
         <Paragraph className=" mt-4">
-          Through this website, I aim to share my insights, experiences, and
-          creations with you. Whether you&apos;re a fellow developer seeking
-          solutions, a fellow writer in search of inspiration, or simply someone
-          who appreciates the finer aspects of design, there&apos;s something
-          here for you.
+          I care a lot about quality. I like writing code that&apos;s readable,
+          testable, and easy to maintain, and I enjoy the QA side of development
+          too, reproducing issues, writing clear bug notes, and tightening up
+          edge cases until things behave properly.
         </Paragraph>
         <Paragraph className=" mt-4">
-          Join me on this journey of bytes and narratives, logic and creativity,
-          code and prose. Together, we can explore the boundless possibilities
-          of technology and storytelling, all while reveling in the sheer beauty
-          of thoughtful design.
+          When I&apos;m not coding, I&apos;m usually deep into games, tabletop
+          campaigns, or planning a trip. I&apos;m especially into Japan travel
+          planning and anything that mixes creativity with systems and
+          structure.
         </Paragraph>
         <Paragraph className=" mt-4">
-          Thank you for being here, and I can&apos;t wait to embark on this
-          adventure with you.
+          If you&apos;d like to chat about a project, a role, or just want to
+          swap ideas, feel free to reach out. I&apos;m always happy to connect
+          and learn from other people building cool stuff.
         </Paragraph>
       </div>
     </div>
